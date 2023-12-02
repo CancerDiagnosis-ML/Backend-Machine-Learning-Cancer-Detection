@@ -52,7 +52,7 @@ Propósito:
 import pandas as pd
 
 # Informa a URL de importação do dataset
-url = "https://raw.githubusercontent.com/FelipeAmorimReis/CancerMama-MVP-MachineLearning/main/CSV/breast-cancer-wisconsin-data/data.csv"
+url = "https://raw.githubusercontent.com/CancerDiagnosis-ML/Backend-Machine-Learning-Cancer-Detection/main/CSV/breast-cancer-wisconsin-data/data.csv"
 
 # Lê o arquivo, ignorando a última coluna, pois não continha informações úteis para a análise
 dataset = pd.read_csv(url, delimiter=',', usecols=lambda column: column != 'Unnamed: 32')
