@@ -17,3 +17,5 @@ O modelo classificará os dados de entrada, indicando se são associados a tumor
 Exibição do Resultado na Tela:
 
 O resultado da predição será exibido na tela do front-end, proporcionando uma experiência interativa para o usuário.
+
+### Acesse o código-fonte do Machine Learning no [Google Colab URL](https://colab.research.google.com/drive/14ISQT78C_FeCDxm-k6Y1B-yyLH1ch48x?usp=sharing)
