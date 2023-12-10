@@ -14,7 +14,7 @@ CORS(app)
 
 # Definindo tags para agrupamento das rotas
 home_tag = Tag(name="Documentação", description="Seleção de documentação: Swagger, Redoc ou RapiDoc")
-mulher_tag = Tag(name="mulher", description="Adição, visualização, remoção e predição de mulheres com Cancêr de Mama")
+mulher_tag = Tag(name="Mulher", description="Adição, visualização, remoção e predição de mulheres com Cancêr de Mama")
 
 # Rota home
 @app.get('/', tags=[home_tag])
@@ -97,7 +97,7 @@ def predict(form: MulherSchema):
         session = Session()
         
         # Checando se mulher já existe na base
-        if session.query(mulher).filter(mulher.name == form.name).first():
+        if session.query(Mulher).filter(Mulher.name == form.name).first():
             error_msg = "mulher já existente na base :/"
             logger.warning(f"Erro ao adicionar mulher '{mulher.name}', {error_msg}")
             return {"message": error_msg}, 409
@@ -135,7 +135,7 @@ def get_mulher(query: MulherBuscaSchema):
     # criando conexão com a base
     session = Session()
     # fazendo a busca
-    mulher = session.query(mulher).filter(mulher.name == mulher_nome).first()
+    mulher = session.query(Mulher).filter(Mulher.name == mulher_nome).first()
     
     if not mulher:
         # A mulher não foi encontrada
@@ -167,7 +167,7 @@ def delete_mulher(query: MulherBuscaSchema):
     session = Session()
     
     # Buscando mulher
-    mulher = session.query(mulher).filter(mulher.name == mulher_nome).first()
+    mulher = session.query(Mulher).filter(Mulher.name == mulher_nome).first()
     
     if not mulher:
         error_msg = "mulher não encontrada na base :/"
@@ -176,5 +176,5 @@ def delete_mulher(query: MulherBuscaSchema):
     else:
         session.delete(mulher)
         session.commit()
-        logger.debug(f"Deletada mulher #{mulher_nome}")
-        return {"message": f"mulher {mulher_nome} removido com sucesso!"}, 200
+        logger.debug(f"Mulher deletada #{mulher_nome}")
+        return {"message": f"A {mulher_nome} foi removida com sucesso!"}, 200

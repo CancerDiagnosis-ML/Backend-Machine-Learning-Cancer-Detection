@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from typing import Optional, List
-from model.mulher import mulher
+from model.mulher import Mulher
 import json
 import numpy as np
 
@@ -14,8 +14,8 @@ class MulherSchema(BaseModel):
     area_mean: float = 181.0
     smoo_mean: float = 0.05263
     comp_mean: float = 0.04362
-    concav_mean: float = 0.00000
-    cp_mean: float = 0.00000
+    concav_mean: float = 0.00323
+    cp_mean: float = 0.00212
     sym_mean: float = 0.1587
     fd_mean: float = 0.05884
 
@@ -53,7 +53,7 @@ class MulherDelSchema(BaseModel):
     name: str = "Gabriela"
 
 # Apresenta apenas os dados de um mulher
-def apresenta_mulher(mulher: mulher):
+def apresenta_mulher(mulher: Mulher):
     """ Retorna uma representação do mulher seguindo o schema definido em
         mulherViewSchema.
     """
@@ -74,7 +74,7 @@ def apresenta_mulher(mulher: mulher):
     }
 
 # Apresenta uma lista de mulheres
-def apresenta_mulheres(mulheres: List[mulher]):
+def apresenta_mulheres(mulheres: List[Mulher]):
     """ Retorna uma representação do mulher seguindo o schema definido em
         mulherViewSchema.
     """

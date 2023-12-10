@@ -6,7 +6,7 @@ from typing import Union
 from model import Base
 
 # colunas = Name,Radius,Texture,Perimeter,Area,Smoothness,Compactness,Concavity,ConcavePoints,Symmetry,FractalDimension,Outcome
-class mulher(Base):
+class Mulher(Base):
     __tablename__ = 'mulheres'
     
     id = Column(Integer, primary_key=True)
