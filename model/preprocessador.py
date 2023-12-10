@@ -22,6 +22,6 @@ class PreProcessador:
         O parâmetro test_size é o percentual de dados de teste.
         """
         dados = dataset.values
-        X = dados[:, 0:-1]
-        Y = dados[:, -1]
+        X = dados[:,0:10]
+        Y = dados[:,10]
         return train_test_split(X, Y, test_size=percentual_teste, random_state=seed)
